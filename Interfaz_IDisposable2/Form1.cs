@@ -22,7 +22,6 @@ namespace Interfaz_IDisposable2
 
         }
         Documento d;
-
         private void btn_instan_Click(object sender, EventArgs e)
         {
             d = new Documento();
@@ -43,22 +42,24 @@ namespace Interfaz_IDisposable2
     }
     public class Documento : IDisposable
         {
-            //una clase que implementa una interfaaz debe implementar sus metodos
+        //una clase que implementa una interfaaz debe implementar sus metodos
 
-            // podemos utilizar un bool para desabilitar el finalizador si usea el Dispose:
-            bool a = true;
-            ~Documento() { if (a) MessageBox.Show("se ejecuto ~Documento (finalizador) "); }
-            //el finalizador se ejecuta cuando termina el ciclo de vida del objeto y pasa el gardbage collector
-            public void Dispose()
-            {
-                MessageBox.Show("Se ejecuto el destructor");
-                //el destructor se ejecuta cuando el programador lo indique
-                //se puede utilizar para soltar recursos no administrados por 
-                //sistema como el consumo de una base de datos
-                a = false;
-            }
+        // podemos utilizar un bool para desabilitar el finalizador si usea el Dispose:
+        //bool a = true;
+        ~Documento() { /* if (a)*/ MessageBox.Show("se ejecuto ~Documento (finalizador) "); }
+        //el finalizador se ejecuta cuando termina el ciclo de vida del objeto y pasa el gardbage collector
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+            MessageBox.Show("Se ejecuto el destructor");
+            //el destructor se ejecuta cuando el programador lo indique
+            //se puede utilizar para soltar recursos no administrados por 
+            //sistema como el consumo de una base de datos
+            // a = false;
         }
 
+    }
 
-    
+
+
 }

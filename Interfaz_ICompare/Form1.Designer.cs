@@ -51,10 +51,11 @@
             // 
             this.Btn_Ejecutar.Location = new System.Drawing.Point(12, 46);
             this.Btn_Ejecutar.Name = "Btn_Ejecutar";
-            this.Btn_Ejecutar.Size = new System.Drawing.Size(125, 26);
+            this.Btn_Ejecutar.Size = new System.Drawing.Size(125, 45);
             this.Btn_Ejecutar.TabIndex = 0;
             this.Btn_Ejecutar.Text = "ejecutar";
             this.Btn_Ejecutar.UseVisualStyleBackColor = true;
+            this.Btn_Ejecutar.Click += new System.EventHandler(this.Btn_Ejecutar_Click);
             // 
             // textBox1
             // 

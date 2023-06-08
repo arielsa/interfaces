@@ -17,9 +17,30 @@ namespace Interfaz_ICompare
             InitializeComponent();
         }
 
+        List<Persona> p;
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Btn_Ejecutar_Click(object sender, EventArgs e)
+        {
+            p = new List<Persona>();    
+            p.AddRange(new Persona[] { new Persona() { Nombre = "juan", Apellido = "adearcos", Edad = 28, },
+                                        new Persona() { Nombre = "maura", Apellido = "mimm", Edad = 80, },
+                                        new Persona() { Nombre = "lucos", Apellido = "pauito", Edad = 10, },
+                                        new Persona() { Nombre = "mirta", Apellido = "garcia", Edad = 19, },
+                                        new Persona() { Nombre = "sebastian", Apellido = "vader", Edad = 41, },
+                                        });
+            foreach (Control c in this.Controls)
+            {
+                if (c is TextBox) (c as TextBox).Clear();                
+            }
+            foreach (Persona persona in p)
+            {
+                textBox1.Text += $"{ persona.ToString()}{Environment.NewLine }";
+            }
         }
     }
 

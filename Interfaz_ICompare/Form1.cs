@@ -21,16 +21,21 @@ namespace Interfaz_ICompare
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
-        private void EjecutoCompare(object sender, EjecutoCompareEventArgs e);
+        private void FuncionEjecutoCompare(object sender, EjecutoCompareEventArgs e)
+        {
+            textBox9.Text += $"x:{e.PxLectura.ToString()}--y:{e.PyLectura.ToString()} -- rdo: {e.RdoLectura}{Environment.NewLine}";
+        }
         private void Btn_Ejecutar_Click(object sender, EventArgs e)
         {
             p = new List<Persona>();    
             p.AddRange(new Persona[] { new Persona() { Nombre = "juan", Apellido = "adearcos", Edad = 28, },
                                         new Persona() { Nombre = "maura", Apellido = "mimm", Edad = 80, },
-                                        new Persona() { Nombre = "lucos", Apellido = "pauito", Edad = 10, },
+                                        new Persona() { Nombre = "bort", Apellido = "pauito", Edad = 10, },
+                                        new Persona() { Nombre = "lucos", Apellido = "dfeg", Edad = 10, },
                                         new Persona() { Nombre = "mirta", Apellido = "garcia", Edad = 19, },
+                                        new Persona() { Nombre = "bort", Apellido = "paot", Edad = 10, },
                                         new Persona() { Nombre = "sebastian", Apellido = "vader", Edad = 41, },
                                         });
             foreach (Control c in this.Controls)
@@ -41,7 +46,7 @@ namespace Interfaz_ICompare
 
             //variable para capturar persona para el evento
             Persona.NombreASC pna = new Persona.NombreASC();
-            pna.EjecutoCompare += EjecutoCompare;
+            pna.EjecutoCompare += FuncionEjecutoCompare;
             p.Sort(pna);
             foreach (Persona persona in p){ textBox5.Text += $"{persona.ToString()}{Environment.NewLine}"; }
             
@@ -132,8 +137,7 @@ namespace Interfaz_ICompare
                 return rdo == 0 ? aa.Compare(x,y) : rdo;
             }
         }
-
-       
+                
     }
     public class EjecutoCompareEventArgs : EventArgs // argumento de evento creado
     {
@@ -145,9 +149,9 @@ namespace Interfaz_ICompare
             x = pX; y = pY; rdo = pRDO;
         }
         //agrego tres propiedades de solo lectura:
-        public Persona pxLectura => x;
-        public Persona pyLectura => y;
-        public int rdoLectura => rdo;
+        public Persona PxLectura => x;
+        public Persona PyLectura => y;
+        public int RdoLectura => rdo;
     }
 
 }

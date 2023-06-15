@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaz_ICompare", "Interf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Int_IDisposable", "Int_IDisposable\Int_IDisposable.csproj", "{AC8C867B-18C3-482F-BC56-198D1B41A587}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaz_IEnumerable", "Interfaz_IEnumerable\Interfaz_IEnumerable.csproj", "{EE034470-3C9C-4AD4-983B-AA9C66F5C3CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AC8C867B-18C3-482F-BC56-198D1B41A587}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC8C867B-18C3-482F-BC56-198D1B41A587}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC8C867B-18C3-482F-BC56-198D1B41A587}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE034470-3C9C-4AD4-983B-AA9C66F5C3CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE034470-3C9C-4AD4-983B-AA9C66F5C3CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE034470-3C9C-4AD4-983B-AA9C66F5C3CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE034470-3C9C-4AD4-983B-AA9C66F5C3CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
